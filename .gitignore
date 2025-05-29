@@ -1,0 +1,24 @@
+# Build & IDE
+/build/
+/.gradle/
+/out/
+/.idea/
+/*.iml
+*.log
+*.class
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Configs locais
+application.properties
+.env
+
+# Test reports
+/test-results/
+/target/
+
+# Arquivos temporários
+*.swp
+*~

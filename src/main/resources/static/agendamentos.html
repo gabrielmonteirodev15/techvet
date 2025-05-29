@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agendamentos TechVet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Agendamentos por Data</h1>
+
+  <label for="dataSelect">Selecione a data:</label>
+  <select id="dataSelect">
+    <option value="">-- Escolha uma data --</option>
+  </select>
+
+  <table border="1" id="tabelaAgendamentos" style="margin-top: 20px;">
+    <thead>
+      <tr>
+        <th>Nome do Pet</th>
+        <th>Dono</th>
+        <th>Data/Hora</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Agendamentos serão inseridos aqui -->
+    </tbody>
+  </table>
+
+  <div id="detalhesAgendamento" style="margin-top: 20px;"></div>
+  <div id="confirmacao" style="margin-top: 10px;"></div>
+
+  <script src="agendamentos.js"></script>
+</body>
+</html>
