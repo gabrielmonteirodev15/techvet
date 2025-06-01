@@ -33,7 +33,7 @@ h1{
     justify-content: center;
     align-items: center;
 }
-h2{
+#dia{
    display: flex;
    justify-content: center;
     border-radius: 20px;
@@ -79,4 +79,8 @@ a {
     color: blue;
     text-decoration: underline;
     cursor: pointer;
+}
+
+main{
+    margin-bottom: 150px;
 }
