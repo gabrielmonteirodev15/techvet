@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/agenda.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <style>
+      /* Modal styles */
+      #modalOverlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      #modal {
+        background: #7EBCF2;
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      }
+
+      #modal h3 { margin-top: 0; }
+      #modal label { font-family: Arial, Helvetica, sans-serif;}
+      #modal input, #modal textarea { width: 100%; margin-bottom: 10px; background: #A7C8F2; border-radius: 7px;}
+      #modal button { margin-right: 10px; border-radius: 15px; padding: 10px 15px 10px 15px;}
+      #modal button:hover { transform: scale(1.03); background-color: #A7C8F2 }
+
+      /* Título e dropdown alinhados */
+      .titulo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+        margin-top: 50px;
+      }
+      .titulo h1 {
+        font-weight: bold;
+        font-size: 48px;
+        color: #6D9BA6;
+      }
+      .titulo select {
+        display: flex;
+        justify-content: center;
+        border-radius: 20px;
+        background-color: #7EBCF2;
+        padding: 8px;
+        width: 190px;
+        height: 60px;
+        align-items: center;
+        color: #000000;
+        font-size: 15px;
+      }
+      /* Restante dos estilos permanece igual */
+    </style>
+</head>
+<body>
+    <header class="cabeca">
+        <div class="logo"><img src="../img/logo.png" alt=""></div>
+        <nav class="navegacao">
+            <a href="">Home</a>
+            <a href="Agendamento_TechVet.html">Cadastro</a>
+            <a href="agenda.html">Agendamento</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="titulo">
+            <h1>Agendamentos</h1>
+            <select id="dataSelect">
+              <option value="">-- Escolha uma data --</option>
+            </select>
+        </div>
+
+        <div>
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora</th>
+                        <th>Pet</th>
+                        <th>Dono</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div id="modalOverlay">
+      <div id="modal">
+        <h3>Editar Agendamento</h3>
+        <label for="paciente">Paciente:</label>
+        <input type="text" id="modalNomePet" placeholder="Nome do Pet" />
+        <label for="dono">Nome:</label>
+        <input type="text" id="modalNomeDono" placeholder="Nome do Dono" />
+        <label for="data">Data e hora:</label>
+        <input type="datetime-local" id="modalDataHora" />
+        <label for="descricao">Descrição do problema:</label>
+        <textarea id="modalDescricao" placeholder="Descrição"></textarea>
+        <div>
+          <button id="modalSave">Salvar</button>
+          <button id="modalDelete">Excluir</button>
+          <button id="modalClose">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+
+        <div>
+            <h2>TechVet</h2>
+            <h3>Clinica de Animais</h3>
+
+        </div>
+        <div class="footer-2">
+            <div class="footer-item2">
+                <p><strong>INSTITUCIONAIS</strong></p>
+                <p><a href="">Equipe</a></p>
+                <p><a href="">Contato</a></p>
+                <p><a href="">Politica de Privacidade</a></p>
+            </div>
+            <div>
+                <p><strong>Contatos</strong></p>
+                <p>Telefone: (12) 3631-5487</p>
+                <p><a href="">techvet@clinicapet.com.br</a></p>
+                <span>
+                    <p>Atendimento: Seg à Sex - 24hrs,</p>
+                    <p>Sábado - 08h às 12h</p>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../script/agenda.js"></script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento</title>
+    <link rel="stylesheet" href="../styles/Estilo_TechVet.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>
+    <header class="cabeca">
+        <div class="logo">
+            <img src="../img/logo.png" alt="">
+        </div>
+
+        <nav class="navegacao">
+            <a href="">Home</a>
+            <a href="Agendamento_TechVet.html">Cadastro</a>
+            <a href="agenda.html">Agendamento</a>
+        </nav>
+    </header>
+    <main>
+      
+        <div class="img-container">
+                    <img src="../img/img_agendamento.png" width="120">
+                </div>
+        <form id="formAgendamento">
+             <fieldset>
+                <legend>Agendamento</legend>
+                
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" placeholder="Digite o nome completo do dono" id="nome" name="nomeDono" required autofocus>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" placeholder="Digite o edereço de e-mail do dono" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="paciente">Paciente:</label>
+                    <input type="text" placeholder="Digite o nome do pet" id="paciente" name="nomePet" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="descricaoProblema">Descrição:</label>
+                    <input type="text" placeholder="Descreva o problema do pet" id="descricao" name="descricaoProblema" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                    <label for="data">Data:</label>
+                    <input type="date" id="data" name="data" required />
+                </div>
+                <div class="form-group half">
+                    <label for="hora">Hora:</label>
+                    <input type="time" id="hora" name="hora" required />
+                </div>
+                </div>  
+                
+            </fieldset>
+        </form>
+        <div class="form-group">    
+            <button id="agendarBtn" type="button">AGENDAR</button>
+        </div> 
+        <p id="msg"></p>
+
+    </main>
+     <footer>
+
+        <div>
+            <h2>TechVet</h2>
+            <h3>Clinica de Animais</h3>
+
+        </div>
+        <div class="footer-2">
+            <div class="footer-item2">
+                <p><strong>INSTITUCIONAIS</strong></p>
+                <p><a href="">Equipe</a></p>
+                <p><a href="">Contato</a></p>
+                <p><a href="">Politica de Privacidade</a></p>
+            </div>
+            <div>
+                <p><strong>Contatos</strong></p>
+                <p>Telefone: (12) 3631-5487</p>
+                <p><a href="">techvet@clinicapet.com.br</a></p>
+                <span>
+                    <p>Atendimento: Seg à Sex - 24hrs,</p>
+                    <p>Sábado - 08h às 12h</p>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    emailjs.init("eslDHbej7U2gJRwWA");
+    document.getElementById('agendarBtn').addEventListener('click', function(event) {
+      event.preventDefault();
+      console.log("Clique no botão AGENDAR detectado");
+
+      const nome = document.getElementById("nome").value;
+      const paciente = document.getElementById("paciente").value;
+      const email = document.getElementById("email").value;
+      const descricao = document.getElementById("descricao").value;
+      const data = document.getElementById("data").value;
+      const hora = document.getElementById("hora").value;
+
+      const templateParams = {
+        nome,
+        paciente,
+        email,
+        data,
+        hora,
+        descricao,
+      };
+
+
+      emailjs.send("service_fzn4hg8", "template_rey1c6l", templateParams)
+        .then((response) => {
+          alert("Agendamento enviado com sucesso!");
+          console.log("SUCESSO:", response);
+        })
+        .catch((error) => {
+          alert("Erro ao enviar o agendamento. Tente novamente.");
+          console.error("ERRO:", error);
+        });
+
+      const form = document.getElementById("formAgendamento");
+      const formData = new FormData(form);
+
+      // Monta o corpo do JSON conforme seu DTO (supondo { nomePet, nomeDono, descricaoProblema, data, hora })
+      const dto = {
+        nomePet: formData.get('nomePet'),
+        nomeDono: formData.get('nomeDono'),
+        email: formData.get('email'),
+        descricaoProblema: formData.get('descricaoProblema'),
+        data: formData.get('data'),   // YYYY-MM-DD
+        hora: formData.get('hora')    // HH:mm
+      };
+
+      console.log("DTO enviado ao backend:", dto);
+      fetch('http://localhost:8080/agendamentos', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(dto)
+      })
+      .then(response => {
+        if (response.status === 409) {
+          throw new Error("Já existe um agendamento para este horário.")
+        }
+        if (!response.ok) throw new Error('Erro ao cadastrar agendamento');
+        return response.json();
+      })
+      .then(agendamento => {
+        document.getElementById('msg').textContent = 'Agendamento realizado com sucesso!';
+        form.reset();
+      })
+      .catch(error => {
+        document.getElementById('msg').textContent = error.message;
+      });
+    });
+  </script>

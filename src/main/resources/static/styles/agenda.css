@@ -1,0 +1,87 @@
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo > img{
+    width: auto;
+    height: 80px;
+    
+}
+.navegacao{
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.navegacao > a{
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 70px;
+    color: #6D9BA6;
+    justify-content: center;
+    align-items: center;
+}
+#dia{
+   display: flex;
+   justify-content: center;
+    border-radius: 20px;
+   background-color: #7EBCF2;
+   padding: 5px;
+   width: 120px;
+   height: 50px;
+   align-items: center;
+   color: #000000;
+}
+.titulo{
+    display: flex;
+    justify-content: space-evenly;
+    width: 600px;
+    align-items: center;
+    height: 100px;
+}
+
+#diaselecionado{
+    margin-right: 50px;
+}
+
+#tabela{
+    display: block;
+    border-collapse: collapse;
+    background-color: #A7C8F2;
+    font-family: Arial, sans-serif;
+    
+}
+th, td {
+    border: 1px solid #61748C; /* Borda nas células */
+    padding: 8px;
+    text-align: center;
+    width: 150px;
+    height: 50px;
+    
+}
+th {
+    background-color: #7EBCF2;
+    color: #000000;
+}
+a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+main{
+    margin-bottom: 150px;
+}

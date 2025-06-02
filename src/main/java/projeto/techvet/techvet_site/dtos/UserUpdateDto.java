@@ -12,6 +12,4 @@ public record UserUpdateDto(
     @NotBlank String descricaoProblema,
     @NotNull LocalDate data,
     @NotNull LocalTime hora
-) {
-    // Nenhum getter manual necessário
-}
+) {}
