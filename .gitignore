@@ -12,7 +12,6 @@
 Thumbs.db
 
 # Configs locais
-application.properties
 .env
 
 # Test reports
