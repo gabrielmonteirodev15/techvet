@@ -1,0 +1,184 @@
+/* Centraliza tudo na tela */
+body, html {
+  margin: 0;
+  justify-content: center;
+  background: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  }
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+.logo > img{
+    width: auto;
+    height: 80px;
+    
+}
+.navegacao{
+    margin-right: 10px;
+    margin-top: 20px;
+}
+.navegacao > a{
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+  /* Tamanho máximo e centralização */
+main {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilo do formulário */
+form {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px; /* Espaço entre a imagem e o legend */
+}
+
+.img-centralizada {
+  max-width: 150px;
+  width: 150px;
+  height: auto;
+  display: block;
+}
+
+
+legend {
+  font-size: 35px;
+  font-weight: bold;
+  color: #004a64;
+}
+/* Fieldset centralizado */
+fieldset {
+  width: 600px;
+  justify-content: center;
+  max-width: 1000%;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+}
+
+/* Cada grupo de input+label */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Label alinhado à esquerda */
+label {
+  margin-bottom: 5px;
+  color: #004a64;
+  font-weight: bold;
+  font-size: 18px
+}
+
+/* Input preenche 100% do container (que já é centralizado) */
+input {
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: none;
+  background-color: #e2dbdb;
+  color: #000000;
+  font-size: 20px;
+}
+
+legend {
+  text-align: center;
+}
+::placeholder {
+  text-align: center;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+
+}
+
+#descricao {
+  padding: 45px;
+}
+
+#hora, #data {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  width: 40%;
+}
+
+button {
+  margin-top: 5%;
+  cursor: pointer;
+  font-size: 25px;
+  padding: 6px;
+  align-self: center;  
+  width: 55%;
+  border-radius: 12px;
+  border: none;
+  background-color: #004a64;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out; /* Animação suave */
+  margin-bottom: 20%;
+}
+
+button:hover {
+  transform: scale(1.05); /* Aumenta 5% ao passar o mouse */
+  background-color: #0f554d /* Cor ao passar o mouse */
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}  
+
+.form-row .form-group.half {
+  flex: 1;
+}
+
+.form-row input[type="date"],
+.form-row input[type="time"] {
+  width: 100%;
+  min-width: 290px;
+  padding: 12px 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e2dbdb;
+  color: #ffffff;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    justify-items: end;
+    border-top: 1px solid #0000002a;
+    margin: 0 150px 0 150px ;
+}
+.footer-2{
+    display: flex;
+}
+footer div{
+    margin: 20px;
+}
+.footer-item2{
+    margin-right: 75px;
+}
