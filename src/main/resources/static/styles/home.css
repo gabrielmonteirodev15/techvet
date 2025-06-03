@@ -1,0 +1,111 @@
+body {
+    align-items: center;
+    padding: 0 150px 0 150px;
+}
+p{
+    font-size: large;
+}
+h1{
+    font-size: 35PX;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo>img {
+    width: auto;
+    height: 80px;
+}
+
+.navegacao {
+    margin-right: 10px;
+    margin-top: 20px;
+}
+
+.navegacao>a {
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/*Main*/
+.tittle{
+    font-size: 40px;
+    color: #26534C;
+}
+main section{
+    padding: 60px;
+}
+.sobre{
+    display: flex;
+    align-items: center;
+}
+.sobre div p:last-child{
+    margin-top: 15px;
+}
+.sobre div p a{
+    padding: 12px;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: white;
+    background-color: #000000;
+}
+.sobre div p a:hover{
+    transition: 2s;
+    background-color: #000000ce;
+}
+.sobre p{
+    width: 70%;
+}
+.sobre-img{
+    width:30% ;
+    height:30% ;
+}
+.destaque img{
+    width: 1030px;
+}
+
+.grid{
+    display: flex;
+}
+.grid div{
+    margin: 30px;
+}
+.grid div .text-about{
+    height: 60px;
+}
+.grid div div{
+    margin: 0;
+}
+.grid span{
+    color: #828282;
+}
+.grid div div img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+/*footer*/
+footer {
+    display: flex;
+    justify-content: space-between;
+    justify-items: end;
+    border-top: 1px solid #0000002a;
+}
+
+
+.footer-2 {
+    display: flex;
+}
+
+footer div {
+    margin: 20px;
+}
+
+.footer-item2 {
+    margin-right: 75px;
+}
