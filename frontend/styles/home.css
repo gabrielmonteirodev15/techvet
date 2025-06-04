@@ -22,6 +22,12 @@ header {
 .navegacao {
     margin-right: 10px;
     margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.cabeca {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .navegacao>a {
