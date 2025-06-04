@@ -1,70 +1,79 @@
-header{
-    display: flex;
-    justify-content: space-between;
-}
-.logo > img{
-    width: auto;
-    height: 80px;
-    
-}
-.navegacao{
-    margin-right: 10px;
-    margin-top: 20px;
-}
-.navegacao > a{
-    padding-left: 10px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-}
 
 main{
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
+    margin-bottom: 150px;
 }
+body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-h1{
-    font-weight: bold;
-    font-size: 70px;
-    color: #6D9BA6;
-    justify-content: center;
-    align-items: center;
-}
-#dia{
-   display: flex;
-   justify-content: center;
-    border-radius: 20px;
-   background-color: #7EBCF2;
-   padding: 5px;
-   width: 120px;
-   height: 50px;
-   align-items: center;
-   color: #000000;
-}
-.titulo{
-    display: flex;
-    justify-content: space-evenly;
-    width: 600px;
-    align-items: center;
-    height: 100px;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      align-items: center;
+      padding: 10px;
+    }
 
-#diaselecionado{
-    margin-right: 50px;
-}
+    .logo img {
+      height: 80px;
+      max-width: 100%;
+    }
 
-#tabela{
-    display: block;
-    border-collapse: collapse;
-    background-color: #A7C8F2;
-    font-family: Arial, sans-serif;
-    
-}
-th, td {
+    .navegacao {
+      margin-top: 10px;
+    }
+
+    .navegacao a {
+      padding-left: 10px;
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    main {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 20px 150px 20px;
+    }
+
+    .titulo {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .titulo h1 {
+      font-size: 5vw;
+      color: #6D9BA6;
+      margin: 0;
+    }
+
+    .titulo select {
+      border-radius: 20px;
+      background-color: #7EBCF2;
+      padding: 10px;
+      width: 190px;
+      height: 60px;
+      font-size: 15px;
+    }
+
+    #tabela {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: auto;
+      display: block;
+      background-color: #A7C8F2;
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+    }
+
+    th, td {
     border: 1px solid #61748C; /* Borda nas células */
     padding: 8px;
     text-align: center;
@@ -76,12 +85,84 @@ th {
     background-color: #7EBCF2;
     color: #000000;
 }
-a {
-    color: blue;
-    text-decoration: underline;
-    cursor: pointer;
+
+    body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+a{
+text-decoration: none;
+color: gray;
 }
 
-main{
-    margin-bottom: 150px;
-}
+    footer {
+      background: #eee;
+      padding: 20px;
+    }
+
+    .footer-2 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    #modalOverlay {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #modal {
+      background: #7EBCF2;
+      padding: 20px;
+      border-radius: 8px;
+      width: 90%;
+      max-width: 400px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    #modal h3 {
+      margin-top: 0;
+    }
+
+    #modal input,
+    #modal textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      background: #A7C8F2;
+      border-radius: 7px;
+      border: 1px solid #ccc;
+      padding: 8px;
+    }
+
+    #modal button {
+      margin-right: 10px;
+      border-radius: 15px;
+      padding: 10px 15px;
+    }
+
+    #modal button:hover {
+      transform: scale(1.03);
+      background-color: #A7C8F2;
+    }
+
+    @media (max-width: 768px) {
+      .titulo h1 {
+        font-size: 7vw;
+      }
+
+      th, td {
+        font-size: 12px;
+        padding: 6px;
+      }
+
+      .navegacao a {
+        display: block;
+        margin: 5px 0;
+      }
+    }
