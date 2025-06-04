@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
       let currentId;
 
       // Carregar datas disponíveis
-      fetch('http://localhost:8080/agendamentos/datas-disponiveis')
+      fetch('https://techvet.onrender.com/agendamentos/datas-disponiveis')
         .then(res => res.json())
         .then(datas => {
           select.querySelectorAll('option:not(:first-child)').forEach(o=>o.remove());
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         tabelaTbody.innerHTML='';
         if (!dataSelecionada) return;
         const [y,m,d]=dataSelecionada.split('-');
-        fetch(`http://localhost:8080/agendamentos/dia?data=${dataSelecionada}`)
+        fetch(`https://techvet.onrender.com/agendamentos/dia?data=${dataSelecionada}`)
           .then(res=>res.json())
           .then(lista=>{
             if(lista.length===0) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       modalSave.addEventListener('click',()=>{
         const [date,time]=modalDataHora.value.split('T');
-        fetch(`http://localhost:8080/agendamentos/${currentId}`,{method:'PUT',
+        fetch(`https://techvet.onrender.com/agendamentos/${currentId}`,{method:'PUT',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify({
             nomePet:modalNomePet.value.trim(),
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .catch(err=>alert(err.message));
       });
 
-      modalDelete.addEventListener('click',()=>{if(!confirm('Confirma exclusão?'))return;fetch(`http://localhost:8080/agendamentos/${currentId}`,{method:'DELETE'})
+      modalDelete.addEventListener('click',()=>{if(!confirm('Confirma exclusão?'))return;fetch(`https://techvet.onrender.com/agendamentos/${currentId}`,{method:'DELETE'})
           .then(res=>{
             if(!res.ok)
               throw new Error('Erro ao excluir');
