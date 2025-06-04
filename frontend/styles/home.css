@@ -17,25 +17,49 @@ h1 {
 header {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     align-items: center;
-    padding: 20px 0;
+    flex-wrap: wrap;
+    padding: 10px 20px;
 }
 
 .logo > img {
+    width: auto;
     height: 80px;
 }
 
 .navegacao {
+    margin-right: 10px;
     margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .navegacao > a {
-    padding-left: 10px;
     text-decoration: none;
     color: black;
     font-weight: bold;
     font-size: 18px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navegacao {
+        margin: 10px 0 0 0;
+        justify-content: center;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .navegacao > a {
+        padding-left: 0;
+    }
 }
 
 .tittle {
@@ -138,24 +162,43 @@ footer {
     justify-content: space-between;
     flex-wrap: wrap;
     border-top: 1px solid #0000002a;
+    margin: 0 150px;
     padding: 20px 0;
-    background: #eee;
 }
 
 .footer-2 {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 20px;
 }
 
 footer div {
-    margin: 10px;
+    margin: 20px;
 }
 
 .footer-item2 {
     margin-right: 75px;
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+        margin: 0 20px;
+        text-align: center;
+    }
+
+    .footer-2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-item2 {
+        margin-right: 0;
+    }
+}
 /* MEDIA QUERIES - RESPONSIVIDADE */
 
 @media (max-width: 768px) {
@@ -174,13 +217,6 @@ footer div {
         width: 100%;
     }
 
-    .navegacao {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        gap: 10px;
-    }
-
     .grid {
         flex-direction: column;
         align-items: center;
@@ -188,21 +224,6 @@ footer div {
 
     .grid > div {
         max-width: 90%;
-    }
-
-    header {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-2 {
-        flex-direction: column;
-        gap: 20px;
     }
 }
 
@@ -213,10 +234,6 @@ footer div {
 
     .tittle {
         font-size: 28px;
-    }
-
-    .navegacao > a {
-        font-size: 16px;
     }
 
     main section {
