@@ -128,14 +128,18 @@ main section {
     height: 40px;
     border-radius: 50%;
 }
+a{
+text-decoration: none;
+color: gray;
+}
 
-/* Footer */
 footer {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     border-top: 1px solid #0000002a;
     padding: 20px 0;
+    background: #eee;
 }
 
 .footer-2 {
