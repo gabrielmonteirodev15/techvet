@@ -1,12 +1,15 @@
 
 main{
-    margin-bottom: 150px;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 150px 0;
 }
 body, html {
     margin: 0;
     padding: 0 5%;
-
-      font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
     }
 
     header {
@@ -89,22 +92,29 @@ body, html {
     }
 
     #tabela {
-      width: 100%;
-      max-width: 100%;
-      overflow-x: auto;
-      display: block;
+      width: 95%;
+      max-width: 900px;
+      border-collapse: collapse;
       background-color: #A7C8F2;
       font-family: Arial, sans-serif;
-      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .tabela-container{
+      overflow-x: auto;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
     }
 
     th, td {
     border: 1px solid #61748C; /* Borda nas células */
-    padding: 8px;
     text-align: center;
-    width: 150px;
+    padding: 8px;
     height: 50px;
-    
+    min-width: 110px;
+    word-wrap: break-word;
 }
 th {
     background-color: #7EBCF2;
