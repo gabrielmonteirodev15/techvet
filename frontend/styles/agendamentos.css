@@ -215,6 +215,15 @@ footer div {
       padding: 10px 20px;
     }
 
+    #modal label {
+      display: block;
+      text-align: left;
+      margin: 10px auto 5px auto;
+      width: 80%;
+      max-width: 400px;
+      font-weight: bold;
+    }
+
     #modal button:hover {
       transform: scale(1.03);
       background-color: #A7C8F2;
