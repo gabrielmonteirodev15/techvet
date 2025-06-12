@@ -143,7 +143,7 @@
       };
 
       console.log("DTO enviado ao backend:", dto);
-      fetch('https://techvet.onrender.com/agendamentos', {
+      fetch('/api/agendamentos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

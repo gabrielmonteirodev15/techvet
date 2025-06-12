@@ -28,7 +28,7 @@ import projeto.techvet.techvet_site.models.UserModel;
 import projeto.techvet.techvet_site.repositories.TechvetRepository;
 
 @RestController
-@RequestMapping("/agendamentos")
+@RequestMapping("/api/agendamentos")
 public class TechvetController {
 
     @Autowired
