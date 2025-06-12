@@ -198,18 +198,21 @@ footer div {
 
     #modal input,
     #modal textarea {
-      width: 100%;
-      margin-bottom: 10px;
+      width: 80%;
+      max-width: 400px;
+      margin: 0 auto 15px auto;
       background: #A7C8F2;
       border-radius: 7px;
       border: 1px solid #ccc;
       padding: 8px;
+      display: block;
     }
 
     #modal button {
-      margin-right: 10px;
+      min-width: 100px;
+      margin: 10px;
       border-radius: 15px;
-      padding: 10px 15px;
+      padding: 10px 20px;
     }
 
     #modal button:hover {
