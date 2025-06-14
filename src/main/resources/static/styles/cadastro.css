@@ -33,6 +33,25 @@ header {
     font-size: 18px;
 }
 
+.navegacao > a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* distância da linha abaixo do texto */
+    width: 0;
+    height: 3px; /* espessura da linha */
+    background-color: currentColor; /* usa a cor do texto */
+    transition: width 0.3s ease;
+}
+
+.navegacao > a:hover {
+    transform: scale(1.05);
+}
+
+.navegacao > a:hover::after {
+    width: 100%;
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     header {
