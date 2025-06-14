@@ -52,7 +52,6 @@ header {
     width: 100%;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -191,7 +190,6 @@ footer div {
     margin-right: 75px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
@@ -221,7 +219,6 @@ text-decoration: none;
 color: gray;
 }
 
-/* 🔁 MEDIA QUERY para telas pequenas */
 @media (max-width: 768px) {
   .form-row {
     flex-direction: column;

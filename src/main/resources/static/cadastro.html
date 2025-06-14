@@ -62,7 +62,7 @@
             </fieldset>
         </form>
         <div class="form-group">    
-            <button id="agendarBtn" type="button">AGENDAR</button>
+            <button id="agendarBtn" type="button">CADASTRAR</button>
         </div> 
         <p id="msg"></p>
 
@@ -132,14 +132,13 @@
       const form = document.getElementById("formAgendamento");
       const formData = new FormData(form);
 
-      // Monta o corpo do JSON conforme seu DTO (supondo { nomePet, nomeDono, descricaoProblema, data, hora })
       const dto = {
         nomePet: formData.get('nomePet'),
         nomeDono: formData.get('nomeDono'),
         email: formData.get('email'),
         descricaoProblema: formData.get('descricaoProblema'),
-        data: formData.get('data'),   // YYYY-MM-DD
-        hora: formData.get('hora')    // HH:mm
+        data: formData.get('data'),   
+        hora: formData.get('hora')   
       };
 
       console.log("DTO enviado ao backend:", dto);

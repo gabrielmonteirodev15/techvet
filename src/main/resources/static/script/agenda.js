@@ -9,9 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const modalDescricao= document.getElementById('modalDescricao');
       const modalSave     = document.getElementById('modalSave');
       const modalClose    = document.getElementById('modalClose');
-      let currentId;
+      let atualID;
 
-      // Carregar datas disponíveis
       fetch('/api/agendamentos/datas-disponiveis')
         .then(res => res.json())
         .then(datas => {
@@ -47,17 +46,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 <td>${ag.nomeDono}</td>
                 <td><a href='#' class='detalhesBtn' data-id='${ag.idCliente}'>Ver</a></td>
               `;
-              tr.querySelector('.detalhesBtn').addEventListener('click', e=>{ e.preventDefault(); openModal(ag); });
+              tr.querySelector('.detalhesBtn').addEventListener('click', e=>{ 
+                e.preventDefault(); openModal(ag); 
+              });
               tabelaTbody.appendChild(tr);
             });
-          }).catch(err=>{ console.error(err); });
+          }).catch(err=>{ 
+            console.error(err); 
+          });
       }
 
       function openModal(ag) {
-        currentId=ag.idCliente;
-        modalNomePet.value  =ag.nomePet;
-        modalNomeDono.value =ag.nomeDono;
-        modalDataHora.value =ag.dataHoraConsulta.slice(0,16);
+        atualID=ag.idCliente;
+        modalNomePet.value=ag.nomePet;
+        modalNomeDono.value=ag.nomeDono;
+        modalDataHora.value=ag.dataHoraConsulta.slice(0,16);
         modalDescricao.value=ag.descricaoProblema||'';
         modalOverlay.style.display='flex';
       }
@@ -65,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       modalSave.addEventListener('click',()=>{
         const [date,time]=modalDataHora.value.split('T');
-        fetch(`/api/agendamentos/${currentId}`,{method:'PUT',
+        fetch(`/api/agendamentos/${atualID}`,{method:'PUT',
           headers:{'Content-Type':'application/json'},
           body:JSON.stringify({
             nomePet:modalNomePet.value.trim(),
@@ -78,11 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
           .then(res=>{
             if(!res.ok)
               throw new Error('Erro ao salvar');
-            modalOverlay.style.display='none';carregarAgendamentos(select.value);})
-          .catch(err=>alert(err.message));
+            modalOverlay.style.display='none';
+            carregarAgendamentos(select.value);
+          })
+          .catch(err=>
+            alert(err.message));
       });
 
-      modalDelete.addEventListener('click',()=>{if(!confirm('Confirma exclusão?'))return;fetch(`/api/agendamentos/${currentId}`,{method:'DELETE'})
+      modalDelete.addEventListener('click',()=>{
+        if(!confirm('Confirma exclusão?'))
+          return;
+        fetch(`/api/agendamentos/${atualID}`, {method:'DELETE'})
           .then(res=>{
             if(!res.ok)
               throw new Error('Erro ao excluir');

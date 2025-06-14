@@ -46,10 +46,10 @@ header {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px; /* distância da linha abaixo do texto */
+    bottom: -2px;
     width: 0;
-    height: 3px; /* espessura da linha */
-    background-color: currentColor; /* usa a cor do texto */
+    height: 3px; 
+    background-color: currentColor;
     transition: width 0.3s ease;
 }
 
@@ -199,7 +199,6 @@ footer div {
     margin-right: 75px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
@@ -218,7 +217,6 @@ footer div {
         margin-right: 0;
     }
 }
-/* MEDIA QUERIES - RESPONSIVIDADE */
 
 @media (max-width: 768px) {
     .sobre {

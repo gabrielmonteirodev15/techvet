@@ -44,10 +44,10 @@ body, html {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -2px; /* distância da linha abaixo do texto */
+    bottom: -2px;
     width: 0;
-    height: 3px; /* espessura da linha */
-    background-color: currentColor; /* usa a cor do texto */
+    height: 3px; 
+    background-color: currentColor;
     transition: width 0.3s ease;
 }
 
@@ -59,7 +59,6 @@ body, html {
     width: 100%;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -128,7 +127,7 @@ body, html {
     }
 
     th, td {
-    border: 1px solid #61748C; /* Borda nas células */
+    border: 1px solid #61748C;
     text-align: center;
     padding: 8px;
     height: 50px;
@@ -173,7 +172,6 @@ footer div {
     margin-right: 75px;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
