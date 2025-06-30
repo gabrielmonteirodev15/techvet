@@ -94,6 +94,7 @@ main section {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: justify;
     gap: 40px;
 }
 
@@ -107,7 +108,7 @@ main section {
 }
 
 .sobre div p:last-child {
-    margin-top: 15px;
+    margin-top: 40px;
 }
 
 .sobre div p a {
@@ -133,6 +134,10 @@ main section {
     max-width: 400px;
     height: auto;
     margin-top: 20px;
+}
+
+.saiba-mais {
+    text-align: justify;
 }
 
 .destaque img {
