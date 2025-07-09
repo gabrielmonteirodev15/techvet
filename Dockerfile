@@ -17,4 +17,4 @@ COPY frontend/ /usr/share/nginx/html/
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
 # Script para iniciar o backend e nginx juntos
-CMD sh -c "java -jar /app/app.jar & nginx -g 'daemon off;'"
+CMD sh -c "java -jar /app/app.jar & while ! nc -z localhost 8080; do sleep 1; done && nginx -g 'daemon off;'"
