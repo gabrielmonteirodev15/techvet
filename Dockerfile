@@ -4,23 +4,30 @@ WORKDIR /app
 COPY backend /app
 RUN mvn clean package -DskipTests
 
-# Etapa 2: Imagem final com Java + Nginx
-FROM eclipse-temurin:21-jdk AS final
+# Etapa 2: Imagem final com Java + Nginx (base Ubuntu)
+FROM ubuntu:22.04
 
-# Instala Nginx
-RUN apt-get update && apt-get install -y nginx netcat && apt-get clean
+# Instala Java, Nginx e utilitários
+RUN apt-get update && \
+    apt-get install -y openjdk-21-jdk nginx netcat && \
+    apt-get clean
 
-# Copia o JAR gerado
+# Define diretório do app
+WORKDIR /app
+
+# Copia backend compilado
 COPY --from=build /app/target/*.jar /app/app.jar
 
-# Copia frontend estático
+# Copia frontend
 COPY frontend/ /usr/share/nginx/html/
 
-# Copia configuração personalizada do Nginx
+# Copia configuração do Nginx
 COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
-# Expõe a porta 80 (para Render detectar)
+# Exponha a porta 80 para o Render reconhecer
 EXPOSE 80
 
-# Script para iniciar backend e nginx
-CMD sh -c "java -jar /app/app.jar & while ! nc -z localhost 8080; do sleep 1; done && nginx -g 'daemon off;'"
+# Starta o Spring Boot + espera e inicia o Nginx
+CMD sh -c "java -jar /app/app.jar & \
+  while ! nc -z localhost 8080; do sleep 1; done && \
+  nginx -g 'daemon off;'"
