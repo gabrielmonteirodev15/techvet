@@ -18,6 +18,8 @@ WORKDIR /app
 # Copia backend compilado
 COPY --from=build /app/target/*.jar /app/app.jar
 
+RUN rm -rf /usr/share/nginx/html/*
+
 # Copia frontend
 COPY frontend/ /usr/share/nginx/html/
 
